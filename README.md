@@ -32,4 +32,10 @@ docker exec -it mycentos /bin/bash
 cd opt
 vi container.txt
 docker cp mycentos:/opt/container.txt ./sample.txt
+
+docker exec -it mycentos /bin/bash
+cat /etc/redhat-release
+docker ps
+docker logs mycentos
+
 ```
