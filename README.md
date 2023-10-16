@@ -1,5 +1,5 @@
 # docker-practice
-# 駆け出しエンジニアのためのDocker入門
+## 駆け出しエンジニアのためのDocker入門
 
 ```
 docker ps -a
@@ -11,4 +11,9 @@ docker start mycentos
 docker ps
 docker stop 4dbaaa400851
 docker restart mycentos
+
+docker exec -it mycentos /bin/bash
+cat /etc/redhat-release
+docker exec mycentos cat /etc/redhat-release
+
 ```
