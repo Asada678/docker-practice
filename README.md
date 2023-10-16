@@ -18,4 +18,7 @@ docker exec mycentos cat /etc/redhat-release
 
 docker rm e394e928c4c8
 docker rm mycentos -f
+
+docker images
+docker rmi b038788ddb22
 ```
