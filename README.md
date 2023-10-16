@@ -24,4 +24,12 @@ docker rmi b038788ddb22
 
 docker build test
 docker images
+
+docker run -it --name mycentos  centos:8 /bin/bash
+docker start mycentos
+docker cp command/sample.txt mycentos:/opt
+docker exec -it mycentos /bin/bash
+cd opt
+vi container.txt
+docker cp mycentos:/opt/container.txt ./sample.txt
 ```
