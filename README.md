@@ -16,4 +16,6 @@ docker exec -it mycentos /bin/bash
 cat /etc/redhat-release
 docker exec mycentos cat /etc/redhat-release
 
+docker rm e394e928c4c8
+docker rm mycentos -f
 ```
