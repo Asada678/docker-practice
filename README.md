@@ -21,4 +21,7 @@ docker rm mycentos -f
 
 docker images
 docker rmi b038788ddb22
+
+docker build test
+docker images
 ```
