@@ -38,4 +38,14 @@ cat /etc/redhat-release
 docker ps
 docker logs mycentos
 
+docker inspect mycentos
+
+docker pull php:8.0
+
+docker commit mycentos asada0923/asada-centos:v1
+
+docker push asada0923/asada-centos:v1
+
+docker pull mongo-express
+docker history mongo-express:latest
 ```
