@@ -71,3 +71,43 @@ cat index.html
   - Aurora
     - 状態を持つDBサーバはAurora一つにする
   - ハイスペックなDBサーバ一つを用意して、他のコンテナと連携する
+
+###　Dockerfile
+- Dockerイメージのコード化
+```
+RUN：Dockerfile→イメージ
+CMD：イメージ→コンテナ
+```
+- RUNの数だけレイヤが作成される
+
+```
+docker build -t dockerfile-run-nginx run
+docker images
+# -d はバックグラウンド起動
+docker run -d -p 8081:80 --name dockerfile-run-nginx dockerfile-run-nginx
+```
+
+```
+COPY：推奨、余計な機能があるより安全
+ADD：機能が多い、圧縮ファイルも扱える
+```
+
+```
+docker build -t dockerfile-copy-nginx copy
+docker run -d -p 8082:80 --name dockerfile-copy-nginx  dockerfile-copy-nginx
+docker ps
+```
+
+### 環境変数
+```
+docker build -t dockerfile-env-nginx env
+docker run -d -p 8083:80 --name dockerfile-env-nginx dockerfile-env-nginx
+```
+
+### MariaDBイメージ
+```
+docker build -t mymariadb mariadb
+docker images
+docker run -d --name mymariadb mymariadb
+
+```
