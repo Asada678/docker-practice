@@ -109,5 +109,34 @@ docker run -d -p 8083:80 --name dockerfile-env-nginx dockerfile-env-nginx
 docker build -t mymariadb mariadb
 docker images
 docker run -d --name mymariadb mymariadb
-
 ```
+
+## Docker Compose
+```
+# 面倒
+docker run --name wordpressdb -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=wordpress -d mysql:5.6
+docker run -p 8080:80 -e WORDPRESS_DB_PASSWORD=password -d --name wordpress --link wordpress:mysql wordpress:4.7-php5.6
+```
+
+- 複数コンテナをまとめて管理
+- yamlファイルの設計図
+- コンテナの立ち上げを自動化
+
+- image→DockerHubから指定
+- build→Dockerfileのパスを指定
+- container_name
+  - 自由にコンテナ名を付けられる
+  - ダブルクオーテーションで囲う
+  - 全てのサービスに付けておくことを推奨
+- volume
+  - docker run -v と同じ
+  - コンテナとホストにディレクトリ共有
+  - ホストのパス:コンテナのパス
+  - コードや設定ファイルに使う
+  - 相対パスを推奨
+- ports
+  - docker run -p と同じ
+  - 外部公開ポート:コンテナ内部ポート
+
+#### コンテナ間通信
+- サービス名がIPアドレスに変換される
