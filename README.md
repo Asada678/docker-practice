@@ -140,3 +140,7 @@ docker run -p 8080:80 -e WORDPRESS_DB_PASSWORD=password -d --name wordpress --li
 
 #### コンテナ間通信
 - サービス名がIPアドレスに変換される
+```
+docker-compose up -d
+docker ps  
+```
